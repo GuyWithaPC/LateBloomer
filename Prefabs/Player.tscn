@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://v6nb4c8yhyad"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m475t"]
+[ext_resource type="SpriteFrames" uid="uid://dmbvxi5d5jimh" path="res://Sprites/Character/amogus.tres" id="1_uwaa2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtxm3"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_m475t")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mtxm3")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_uwaa2")
+animation = &"side"
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_speed = 10.0
