@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dwpyxmtswskgd"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dwpyxmtswskgd"]
 
 [ext_resource type="FontFile" uid="uid://ju3pohuua4fb" path="res://Fonts/Kenney Blocks.ttf" id="1_73hvi"]
 [ext_resource type="StyleBox" uid="uid://3cvw4ww5jowu" path="res://Styles/dialog_box.tres" id="2_oiecc"]
+[ext_resource type="FontFile" uid="uid://c6fvolpwu1v6y" path="res://Fonts/Kenney Mini.ttf" id="3_ralda"]
 
 [sub_resource type="Image" id="Image_q0ftd"]
 data = {
@@ -28,7 +29,7 @@ data = {
 image = SubResource("Image_m7hdc")
 
 [resource]
-default_font = ExtResource("1_73hvi")
+default_font = ExtResource("3_ralda")
 AcceptDialog/styles/panel = null
 Button/fonts/font = ExtResource("1_73hvi")
 Button/styles/disabled = null
@@ -184,7 +185,7 @@ TextEdit/icons/tab = SubResource("ImageTexture_xhyxa")
 TextEdit/styles/focus = ExtResource("2_oiecc")
 TextEdit/styles/normal = ExtResource("2_oiecc")
 TextEdit/styles/read_only = ExtResource("2_oiecc")
-TooltipLabel/fonts/font = ExtResource("1_73hvi")
+TooltipLabel/fonts/font = ExtResource("3_ralda")
 TooltipPanel/styles/panel = null
 Tree/fonts/font = ExtResource("1_73hvi")
 Tree/fonts/title_button_font = ExtResource("1_73hvi")

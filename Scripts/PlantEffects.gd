@@ -2,7 +2,7 @@ extends Node
 class_name PlantEffects
 
 enum PlantType {
-	None,
+	None = 420,
 	Carrot = 0,
 	Tomato = 1,
 	Wheat = 2,
@@ -10,7 +10,7 @@ enum PlantType {
 }
 
 enum GrowthStage {
-	None,
+	None = 420,
 	Seedling = 0,
 	Growing = 1,
 	Grown = 2,
@@ -22,7 +22,9 @@ static func empty_plant(slot: int) -> Dictionary:
 		"type": PlantType.None,
 		"slot": slot,
 		"stage": GrowthStage.None,
+		"goofed": false,
 		"growth_mult": 1.0,
+		"scale_mult": 1.0,
 		"fertilizer": 0
 	}
 	return plant_dict
@@ -76,6 +78,7 @@ static func plant_steroids(fertilizer, plant, field, player) -> bool:
 	if (randf() < fertilizer["benefit_chance"]):
 		return false
 	plant["growth_mult"] *= 0.5
+	plant["goofed"] = true
 	return true
 
 static func plant_battery(fertilizer, plant, field, player) -> bool:
@@ -83,12 +86,22 @@ static func plant_battery(fertilizer, plant, field, player) -> bool:
 		return false
 	for slot in get_neighbors(plant["slot"]):
 		field[str(slot)]["growth_mult"] *= 0.5
+		field[str(slot)]["goofed"] = true
 	return true
 
 static func update_plutonium(fertilizer, plant, field, player) -> bool:
 	if (randf() < fertilizer["benefit_chance"]):
 		return false
-	plant["type"] = randi() % 4
+	var new_type: int = randi() % 4
+	if new_type == 0:
+		plant["type"] = PlantType.Carrot
+	if new_type == 1:
+		plant["type"] = PlantType.Tomato
+	if new_type == 2:
+		plant["type"] = PlantType.Wheat
+	if new_type == 3:
+		plant["type"] = PlantType.Corn
+	plant["goofed"] = true
 	return true
 
 static func update_ipad(fertilizer, plant, field, player) -> bool:

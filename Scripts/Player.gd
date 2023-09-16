@@ -7,7 +7,7 @@ const FRICTION = 0.5
 const UPDOWNSPEED = 0.5
 
 enum Item {
-	None,
+	None = 420,
 	Carrot = 0,
 	Tomato = 1,
 	Wheat = 2,
@@ -23,20 +23,62 @@ enum Item {
 }
 var item_count: int = 0
 var item_type: Item = Item.None
-var money: int = 100
+var money: int = 10
 
 @onready
 var root = get_tree().root.get_node("Root")
 
+func shop(button: String, cost: int):
+	if item_type != Item.None and item_type != Item[button]:
+		return
+	money -= cost
+	item_type = Item[button]
+	item_count += 1
+
 func _ready():
-	item_type = Item.Tomato
-	item_count = 4
+	for button in $GUI/ShopScreen.get_children():
+		if button.name == "Label":
+			continue
+		button.connect("pressed", self.shop.bind(button.name, int(button.text.trim_prefix("$"))))
 
 func _process(delta):
 	if item_count == 0:
 		item_type = Item.None
 	$GUI/ItemCount.text = str(item_count)
 	$GUI/Money.text = "$%s" % str(money)
+	var inShop = false
+	for area in $Planter.get_overlapping_areas():
+		if area.name == "ShopZone":
+			inShop = true
+	$GUI/ShopScreen.visible = inShop
+	
+	for button in $GUI/ShopScreen.get_children():
+		if button.name == "Label":
+			continue
+		var cost: int = int(button.text.trim_prefix("$"))
+		if money >= cost:
+			button.disabled = false
+		else:
+			button.disabled = true
+	
+	# update the selected square
+	var closest = null
+	var offset_position = self.position + Vector2(0,8)
+	for spot in get_tree().get_nodes_in_group("CropPositions"):
+		spot.get_node("Selected").visible = false
+		if closest == null:
+			closest = spot
+		elif offset_position.distance_to(spot.position) < offset_position.distance_to(closest.position):
+			closest = spot
+	if offset_position.distance_to(closest.position) > 25:
+		closest = null
+	if closest != null:
+		closest.get_node("Selected").visible = true
+	
+	# plant in the selected square if the player presses space
+	if Input.is_action_pressed("plant") and closest != null:
+		if item_count > 0:
+			item_count -= 1 if root.plant(closest.name, item_type) else 0
 	
 	if item_type == Item.None:
 		$GUI/ItemCount.visible = false
@@ -54,9 +96,6 @@ func _physics_process(delta):
 		direction.x -= 1
 	if Input.is_action_pressed("right"):
 		direction.x += 1
-	if Input.is_action_just_pressed("ui_cancel"):
-		item_count = 2
-		item_type = Item.Steroids
 	
 	direction = direction.normalized()
 	direction.y *= UPDOWNSPEED
@@ -89,8 +128,5 @@ func _physics_process(delta):
 func _on_planter_area_entered(area):
 	if !area.is_in_group("CropPositions"):
 		return
-	
-	if item_count > 0:
-		item_count -= 1 if root.plant(area.name, item_type) else 0
 	
 	money += root.harvest(area.name)

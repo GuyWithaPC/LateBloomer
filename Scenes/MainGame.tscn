@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch6t1sa1oip43"]
+[gd_scene load_steps=24 format=3 uid="uid://ch6t1sa1oip43"]
 
 [ext_resource type="TileSet" uid="uid://bgwjhngndvqgc" path="res://Sprites/Tilemaps/farm_tileset.tres" id="1_fbn53"]
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_k8uuu"]
@@ -7,9 +7,25 @@
 [ext_resource type="Theme" uid="uid://dwpyxmtswskgd" path="res://Styles/main_theme.tres" id="3_xqjpg"]
 [ext_resource type="SpriteFrames" uid="uid://tpll24c1w2w6" path="res://Sprites/crops.tres" id="5_l2dei"]
 [ext_resource type="SpriteFrames" uid="uid://kbwsdbkyj55o" path="res://Sprites/items.tres" id="5_ojflj"]
+[ext_resource type="Texture2D" uid="uid://y1fmrl7r0v1u" path="res://Sprites/Fertilizers/brawndo.png" id="7_f2cmo"]
+[ext_resource type="Texture2D" uid="uid://bpxhnk0fp1gco" path="res://Sprites/Fertilizers/plutonium.png" id="8_tha55"]
+[ext_resource type="Texture2D" uid="uid://dkxdaxncyihpm" path="res://Sprites/Fertilizers/ammonia.png" id="9_uft6r"]
+[ext_resource type="Texture2D" uid="uid://smqjrrm3ra7d" path="res://Sprites/Fertilizers/gasoline.png" id="10_3n60h"]
+[ext_resource type="Texture2D" uid="uid://crcdr3am676tk" path="res://Sprites/Fertilizers/steroids.png" id="11_ynpeu"]
+[ext_resource type="Texture2D" uid="uid://0bkdo80huj4l" path="res://Sprites/Fertilizers/ipad.png" id="12_h0hy6"]
+[ext_resource type="Texture2D" uid="uid://dslooyr0xqydd" path="res://Sprites/Fertilizers/car_battery.png" id="13_6hx14"]
+[ext_resource type="Texture2D" uid="uid://cqvrxlhmqhds8" path="res://Sprites/Fertilizers/music.png" id="14_w4fpe"]
+[ext_resource type="Texture2D" uid="uid://c7kfhl31343v4" path="res://Sprites/Crops/carrot.tres" id="15_4bgc8"]
+[ext_resource type="Texture2D" uid="uid://c74y7gbgjcci7" path="res://Sprites/Crops/tomato.tres" id="16_pcokj"]
+[ext_resource type="Texture2D" uid="uid://blbx2dk3nwj4l" path="res://Sprites/Crops/wheat.tres" id="17_ptkxm"]
+[ext_resource type="Texture2D" uid="uid://1ck64qusjead" path="res://Sprites/Crops/corn.tres" id="18_il1u4"]
+[ext_resource type="PackedScene" uid="uid://dadibxloxpuvh" path="res://Prefabs/GoofCloud.tscn" id="20_uyd2w"]
+[ext_resource type="AudioStream" uid="uid://xko1lpjn3bsa" path="res://Music/normal.ogg" id="21_o5wdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyqkt"]
 size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_reoiw"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_k8uuu")
@@ -77,11 +93,235 @@ sprite_frames = ExtResource("5_ojflj")
 
 [node name="DayFade" type="ColorRect" parent="Background/Player/GUI"]
 layout_mode = 0
-offset_left = -194.0
-offset_top = -110.0
-offset_right = 195.0
-offset_bottom = 110.0
+offset_left = -365.0
+offset_top = -224.0
+offset_right = 394.0
+offset_bottom = 250.0
 color = Color(0, 0, 0, 1)
+
+[node name="ShopScreen" type="Panel" parent="Background/Player/GUI"]
+visible = false
+layout_mode = 0
+offset_left = -119.0
+offset_top = -106.0
+offset_right = 190.0
+offset_bottom = 106.0
+
+[node name="Label" type="Label" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_right = 29.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Shop"
+
+[node name="Brawndo" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -67.0
+offset_right = 21.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("7_f2cmo")
+
+[node name="Plutonium" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -27.0
+offset_right = 21.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("8_tha55")
+
+[node name="Ammonia" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = 13.0
+offset_right = 21.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("9_uft6r")
+
+[node name="Gasoline" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = 53.0
+offset_right = 21.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("10_3n60h")
+
+[node name="Steroids" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -67.0
+offset_right = -31.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "$2"
+icon = ExtResource("11_ynpeu")
+
+[node name="IPad" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -27.0
+offset_right = -31.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "$2"
+icon = ExtResource("12_h0hy6")
+
+[node name="CarBattery" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = 13.0
+offset_right = -31.0
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "$2"
+icon = ExtResource("13_6hx14")
+
+[node name="Music" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = 53.0
+offset_right = -31.0
+offset_bottom = 85.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "$2"
+icon = ExtResource("14_w4fpe")
+
+[node name="Carrot" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -67.0
+offset_right = 60.0
+offset_bottom = -35.0
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("15_4bgc8")
+
+[node name="Tomato" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -27.0
+offset_right = 60.0
+offset_bottom = 5.0
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("16_pcokj")
+
+[node name="Wheat" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 60.0
+offset_bottom = 45.0
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("17_ptkxm")
+
+[node name="Corn" type="Button" parent="Background/Player/GUI/ShopScreen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 53.0
+offset_right = 60.0
+offset_bottom = 85.0
+grow_vertical = 2
+text = "$1"
+icon = ExtResource("18_il1u4")
+
+[node name="DayLabel" type="Label" parent="Background/Player/GUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -39.0
+offset_right = 12.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 1"
+
+[node name="Label" type="Label" parent="Background"]
+z_index = 2
+offset_left = -87.0
+offset_top = -99.0
+offset_right = -29.0
+offset_bottom = -62.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("3_xqjpg")
+text = "Shop"
 
 [node name="Crops" type="Node2D" parent="."]
 
@@ -93,11 +333,27 @@ position = Vector2(-9, 9)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/1"]
 shape = SubResource("RectangleShape2D_yyqkt")
 
+[node name="Selected" type="ColorRect" parent="Crops/Positions/1"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
+
 [node name="2" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(9, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/2"]
 shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Selected" type="ColorRect" parent="Crops/Positions/2"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
 
 [node name="3" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(27, 9)
@@ -105,11 +361,27 @@ position = Vector2(27, 9)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/3"]
 shape = SubResource("RectangleShape2D_yyqkt")
 
+[node name="Selected" type="ColorRect" parent="Crops/Positions/3"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
+
 [node name="4" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(45, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/4"]
 shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Selected" type="ColorRect" parent="Crops/Positions/4"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
 
 [node name="5" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(-9, 27)
@@ -117,11 +389,27 @@ position = Vector2(-9, 27)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/5"]
 shape = SubResource("RectangleShape2D_yyqkt")
 
+[node name="Selected" type="ColorRect" parent="Crops/Positions/5"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
+
 [node name="6" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(9, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/6"]
 shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Selected" type="ColorRect" parent="Crops/Positions/6"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
 
 [node name="7" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(27, 27)
@@ -129,11 +417,27 @@ position = Vector2(27, 27)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/7"]
 shape = SubResource("RectangleShape2D_yyqkt")
 
+[node name="Selected" type="ColorRect" parent="Crops/Positions/7"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
+
 [node name="8" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(45, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/8"]
 shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Selected" type="ColorRect" parent="Crops/Positions/8"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
 
 [node name="9" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(-9, 45)
@@ -141,11 +445,27 @@ position = Vector2(-9, 45)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/9"]
 shape = SubResource("RectangleShape2D_yyqkt")
 
+[node name="Selected" type="ColorRect" parent="Crops/Positions/9"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
+
 [node name="10" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(9, 45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/10"]
 shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Selected" type="ColorRect" parent="Crops/Positions/10"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
 
 [node name="11" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(27, 45)
@@ -153,11 +473,27 @@ position = Vector2(27, 45)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/11"]
 shape = SubResource("RectangleShape2D_yyqkt")
 
+[node name="Selected" type="ColorRect" parent="Crops/Positions/11"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
+
 [node name="12" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(45, 45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/12"]
 shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Selected" type="ColorRect" parent="Crops/Positions/12"]
+visible = false
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0, 0, 0, 0.364706)
 
 [node name="Sprites" type="Node2D" parent="Crops"]
 
@@ -167,11 +503,15 @@ position = Vector2(-9, 9)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
 
+[node name="GoofCloud" parent="Crops/Sprites/1" instance=ExtResource("20_uyd2w")]
+
 [node name="2" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
 position = Vector2(9, 9)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
+
+[node name="GoofCloud" parent="Crops/Sprites/2" instance=ExtResource("20_uyd2w")]
 
 [node name="3" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
@@ -179,11 +519,15 @@ position = Vector2(27, 9)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
 
+[node name="GoofCloud" parent="Crops/Sprites/3" instance=ExtResource("20_uyd2w")]
+
 [node name="4" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
 position = Vector2(45, 9)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
+
+[node name="GoofCloud" parent="Crops/Sprites/4" instance=ExtResource("20_uyd2w")]
 
 [node name="5" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
@@ -191,11 +535,15 @@ position = Vector2(-9, 27)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
 
+[node name="GoofCloud" parent="Crops/Sprites/5" instance=ExtResource("20_uyd2w")]
+
 [node name="6" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
 position = Vector2(9, 27)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
+
+[node name="GoofCloud" parent="Crops/Sprites/6" instance=ExtResource("20_uyd2w")]
 
 [node name="7" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
@@ -203,11 +551,15 @@ position = Vector2(27, 27)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
 
+[node name="GoofCloud" parent="Crops/Sprites/7" instance=ExtResource("20_uyd2w")]
+
 [node name="8" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
 position = Vector2(45, 27)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
+
+[node name="GoofCloud" parent="Crops/Sprites/8" instance=ExtResource("20_uyd2w")]
 
 [node name="9" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
@@ -215,11 +567,15 @@ position = Vector2(-9, 45)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
 
+[node name="GoofCloud" parent="Crops/Sprites/9" instance=ExtResource("20_uyd2w")]
+
 [node name="10" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
 position = Vector2(9, 45)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
+
+[node name="GoofCloud" parent="Crops/Sprites/10" instance=ExtResource("20_uyd2w")]
 
 [node name="11" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
@@ -227,8 +583,22 @@ position = Vector2(27, 45)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
 
+[node name="GoofCloud" parent="Crops/Sprites/11" instance=ExtResource("20_uyd2w")]
+
 [node name="12" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
 visible = false
 position = Vector2(45, 45)
 sprite_frames = ExtResource("5_l2dei")
 offset = Vector2(0, -6)
+
+[node name="GoofCloud" parent="Crops/Sprites/12" instance=ExtResource("20_uyd2w")]
+
+[node name="ShopZone" type="Area2D" parent="."]
+position = Vector2(-81, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopZone"]
+shape = SubResource("RectangleShape2D_reoiw")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_o5wdr")
+autoplay = true
