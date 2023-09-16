@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://kbwsdbkyj55o"]
+
+[ext_resource type="Texture2D" uid="uid://gt68tvu5ypsu" path="res://Sprites/Tilemaps/farm_tilemap.png" id="1_1nupc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs5a5"]
+atlas = ExtResource("1_1nupc")
+region = Rect2(144, 54, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a8r0"]
+atlas = ExtResource("1_1nupc")
+region = Rect2(162, 54, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0rca"]
+atlas = ExtResource("1_1nupc")
+region = Rect2(180, 54, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3uno"]
+atlas = ExtResource("1_1nupc")
+region = Rect2(198, 54, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55mld"]
+atlas = ExtResource("1_1nupc")
+region = Rect2(180, 18, 18, 18)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs5a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a8r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0rca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3uno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55mld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

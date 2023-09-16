@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dwvf1gmmkw0gb"]
+
+[ext_resource type="Texture2D" uid="uid://cpu6s4qit7hru" path="res://Sprites/GUI/Timer/timer_100.png" id="1_6bsaw"]
+[ext_resource type="Texture2D" uid="uid://u2a3g26exktg" path="res://Sprites/GUI/Timer/timer_CW_75.png" id="2_y4dcj"]
+[ext_resource type="Texture2D" uid="uid://2gqrsmuqbkha" path="res://Sprites/GUI/Timer/timer_CW_50.png" id="3_ncwxh"]
+[ext_resource type="Texture2D" uid="uid://r8rsbyoeq11h" path="res://Sprites/GUI/Timer/timer_CW_25.png" id="4_t5qye"]
+[ext_resource type="Texture2D" uid="uid://dbo1m4g2vyn0k" path="res://Sprites/GUI/Timer/timer_0.png" id="5_y1bcp"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6bsaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y4dcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ncwxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t5qye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y1bcp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

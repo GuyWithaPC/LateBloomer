@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gt68tvu5ypsu"
-path="res://.godot/imported/farm_tilemap.png-4f81f84da1cd8584552a87dcc5c33575.ctex"
+uid="uid://cxdmgqfux1l56"
+path="res://.godot/imported/farm_tilemap_3.png-3797bb21d3c631f0d616a1d6fd731a2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilemaps/farm_tilemap.png"
-dest_files=["res://.godot/imported/farm_tilemap.png-4f81f84da1cd8584552a87dcc5c33575.ctex"]
+source_file="res://Sprites/Tilemaps/farm_tilemap_3.png"
+dest_files=["res://.godot/imported/farm_tilemap_3.png-3797bb21d3c631f0d616a1d6fd731a2e.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
