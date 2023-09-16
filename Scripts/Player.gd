@@ -12,10 +12,18 @@ enum Item {
 	Tomato = 1,
 	Wheat = 2,
 	Corn = 3,
-	Water = 4
+	Brawndo = 4,
+	Plutonium = 5,
+	Ammonia = 6,
+	Gasoline = 7,
+	Steroids = 8,
+	IPad = 9,
+	CarBattery = 10,
+	Music = 11
 }
 var item_count: int = 0
 var item_type: Item = Item.None
+var money: int = 100
 
 @onready
 var root = get_tree().root.get_node("Root")
@@ -28,6 +36,7 @@ func _process(delta):
 	if item_count == 0:
 		item_type = Item.None
 	$GUI/ItemCount.text = str(item_count)
+	$GUI/Money.text = "$%s" % str(money)
 	
 	if item_type == Item.None:
 		$GUI/ItemCount.visible = false
@@ -45,6 +54,9 @@ func _physics_process(delta):
 		direction.x -= 1
 	if Input.is_action_pressed("right"):
 		direction.x += 1
+	if Input.is_action_just_pressed("ui_cancel"):
+		item_count = 4
+		item_type = Item.Brawndo
 	
 	direction = direction.normalized()
 	direction.y *= UPDOWNSPEED
@@ -79,5 +91,4 @@ func _on_planter_area_entered(area):
 		return
 	
 	if item_count > 0:
-		root.plant(area.name, item_type)
-		item_count -= 1
+		item_count -= 1 if root.plant(area.name, item_type) else 0
