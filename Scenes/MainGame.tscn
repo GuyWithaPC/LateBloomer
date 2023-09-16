@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch6t1sa1oip43"]
+[gd_scene load_steps=5 format=3 uid="uid://ch6t1sa1oip43"]
 
 [ext_resource type="TileSet" uid="uid://bgwjhngndvqgc" path="res://Sprites/Tilemaps/farm_tileset.tres" id="1_fbn53"]
 [ext_resource type="PackedScene" uid="uid://v6nb4c8yhyad" path="res://Prefabs/Player.tscn" id="2_0ifmt"]
+[ext_resource type="SpriteFrames" uid="uid://dwvf1gmmkw0gb" path="res://Sprites/GUI/Timer/timer.tres" id="3_ehn5a"]
+[ext_resource type="Theme" uid="uid://dwpyxmtswskgd" path="res://Styles/main_theme.tres" id="3_xqjpg"]
 
 [node name="Root" type="Node2D"]
 
@@ -29,6 +31,29 @@ layer_2/tile_data = PackedInt32Array(-196610, 458756, 2, -196609, 524292, 2, -26
 [node name="Player" parent="Background" instance=ExtResource("2_0ifmt")]
 z_index = 1
 y_sort_enabled = true
+
+[node name="GUI" type="Control" parent="Background/Player"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_xqjpg")
+
+[node name="Timer" type="AnimatedSprite2D" parent="Background/Player/GUI"]
+position = Vector2(-174, -90)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("3_ehn5a")
+
+[node name="Money" type="Label" parent="Background/Player/GUI"]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -107.0
+offset_right = 36.0
+offset_bottom = -70.0
+text = "$40"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Crops" type="Node2D" parent="."]
 

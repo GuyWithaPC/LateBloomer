@@ -1,0 +1,214 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dwpyxmtswskgd"]
+
+[ext_resource type="FontFile" uid="uid://ju3pohuua4fb" path="res://Fonts/Kenney Blocks.ttf" id="1_73hvi"]
+[ext_resource type="StyleBox" uid="uid://3cvw4ww5jowu" path="res://Styles/dialog_box.tres" id="2_oiecc"]
+
+[sub_resource type="Image" id="Image_khuwt"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 179, 179, 179, 20, 188, 188, 188, 19, 255, 255, 255, 1, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 179, 179, 179, 20, 180, 180, 180, 64, 180, 180, 180, 64, 188, 188, 188, 19, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 188, 188, 188, 19, 180, 180, 180, 64, 180, 180, 180, 64, 188, 188, 188, 19, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 188, 188, 188, 19, 188, 188, 188, 19, 255, 255, 255, 1, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_jeyus"]
+image = SubResource("Image_khuwt")
+
+[sub_resource type="Image" id="Image_w4hkp"]
+data = {
+"data": PackedByteArray(181, 181, 181, 48, 179, 179, 179, 50, 213, 213, 213, 6, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 179, 179, 179, 50, 180, 180, 180, 64, 180, 180, 180, 54, 213, 213, 213, 6, 255, 255, 255, 0, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 204, 204, 204, 5, 178, 178, 178, 53, 180, 180, 180, 64, 180, 180, 180, 54, 213, 213, 213, 6, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 255, 255, 255, 0, 204, 204, 204, 5, 182, 182, 182, 52, 180, 180, 180, 64, 180, 180, 180, 51, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 255, 255, 255, 0, 213, 213, 213, 6, 180, 180, 180, 54, 180, 180, 180, 64, 179, 179, 179, 50, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 213, 213, 213, 6, 180, 180, 180, 54, 180, 180, 180, 64, 183, 183, 183, 53, 170, 170, 170, 6, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 182, 182, 182, 49, 180, 180, 180, 64, 183, 183, 183, 53, 170, 170, 170, 6, 255, 255, 255, 0, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64, 181, 181, 181, 41, 182, 182, 182, 49, 170, 170, 170, 6, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 180, 180, 180, 64, 180, 180, 180, 64),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_xhyxa"]
+image = SubResource("Image_w4hkp")
+
+[resource]
+default_font = ExtResource("1_73hvi")
+AcceptDialog/styles/panel = null
+Button/fonts/font = ExtResource("1_73hvi")
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+CheckBox/fonts/font = ExtResource("1_73hvi")
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+CheckButton/fonts/font = ExtResource("1_73hvi")
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+CodeEdit/fonts/font = ExtResource("1_73hvi")
+CodeEdit/styles/completion = null
+CodeEdit/styles/focus = null
+CodeEdit/styles/normal = null
+CodeEdit/styles/read_only = null
+ColorPickerButton/fonts/font = ExtResource("1_73hvi")
+ColorPickerButton/styles/disabled = null
+ColorPickerButton/styles/focus = null
+ColorPickerButton/styles/hover = null
+ColorPickerButton/styles/normal = null
+ColorPickerButton/styles/pressed = null
+ColorPresetButton/styles/preset_fg = null
+Fonts/fonts/large = ExtResource("1_73hvi")
+Fonts/fonts/normal = ExtResource("1_73hvi")
+GraphEdit/styles/bg = null
+GraphEditMinimap/styles/bg = null
+GraphEditMinimap/styles/camera = null
+GraphEditMinimap/styles/node = null
+GraphNode/fonts/title_font = ExtResource("1_73hvi")
+GraphNode/styles/breakpoint = null
+GraphNode/styles/comment = null
+GraphNode/styles/comment_focus = null
+GraphNode/styles/frame = null
+GraphNode/styles/position = null
+GraphNode/styles/selected_frame = null
+GraphNode/styles/slot = null
+HScrollBar/styles/grabber = null
+HScrollBar/styles/grabber_highlight = null
+HScrollBar/styles/grabber_pressed = null
+HScrollBar/styles/scroll = null
+HScrollBar/styles/scroll_focus = null
+HSeparator/styles/separator = null
+HSlider/styles/grabber_area = null
+HSlider/styles/grabber_area_highlight = null
+HSlider/styles/slider = null
+ItemList/fonts/font = ExtResource("1_73hvi")
+ItemList/styles/cursor = null
+ItemList/styles/cursor_unfocused = null
+ItemList/styles/focus = null
+ItemList/styles/hovered = null
+ItemList/styles/panel = null
+ItemList/styles/selected = null
+ItemList/styles/selected_focus = null
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_73hvi")
+Label/styles/normal = ExtResource("2_oiecc")
+LineEdit/fonts/font = ExtResource("1_73hvi")
+LineEdit/styles/focus = null
+LineEdit/styles/normal = null
+LineEdit/styles/read_only = null
+LinkButton/fonts/font = ExtResource("1_73hvi")
+LinkButton/styles/focus = null
+MenuBar/fonts/font = ExtResource("1_73hvi")
+MenuBar/styles/disabled = null
+MenuBar/styles/focus = null
+MenuBar/styles/hover = null
+MenuBar/styles/normal = null
+MenuBar/styles/pressed = null
+MenuButton/fonts/font = ExtResource("1_73hvi")
+MenuButton/styles/disabled = null
+MenuButton/styles/focus = null
+MenuButton/styles/hover = null
+MenuButton/styles/normal = null
+MenuButton/styles/pressed = null
+OptionButton/fonts/font = ExtResource("1_73hvi")
+OptionButton/styles/disabled = null
+OptionButton/styles/disabled_mirrored = null
+OptionButton/styles/focus = null
+OptionButton/styles/hover = null
+OptionButton/styles/hover_mirrored = null
+OptionButton/styles/normal = null
+OptionButton/styles/normal_mirrored = null
+OptionButton/styles/pressed = null
+OptionButton/styles/pressed_mirrored = null
+Panel/styles/panel = ExtResource("2_oiecc")
+PanelContainer/styles/panel = ExtResource("2_oiecc")
+PopupDialog/styles/panel = null
+PopupMenu/fonts/font = ExtResource("1_73hvi")
+PopupMenu/fonts/font_separator = ExtResource("1_73hvi")
+PopupMenu/styles/hover = null
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = null
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
+PopupPanel/styles/panel = null
+ProgressBar/fonts/font = ExtResource("1_73hvi")
+ProgressBar/styles/background = null
+ProgressBar/styles/fill = null
+RichTextLabel/fonts/bold_font = ExtResource("1_73hvi")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_73hvi")
+RichTextLabel/fonts/italics_font = ExtResource("1_73hvi")
+RichTextLabel/fonts/mono_font = ExtResource("1_73hvi")
+RichTextLabel/fonts/normal_font = ExtResource("1_73hvi")
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+ScrollContainer/styles/panel = null
+TabBar/fonts/font = ExtResource("1_73hvi")
+TabBar/styles/button_highlight = null
+TabBar/styles/button_pressed = null
+TabBar/styles/tab_disabled = null
+TabBar/styles/tab_hovered = null
+TabBar/styles/tab_selected = null
+TabBar/styles/tab_unselected = null
+TabContainer/fonts/font = ExtResource("1_73hvi")
+TabContainer/styles/panel = null
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_hovered = null
+TabContainer/styles/tab_selected = null
+TabContainer/styles/tab_unselected = null
+TabContainer/styles/tabbar_background = null
+TextEdit/colors/background_color = Color(0, 0, 0, 0)
+TextEdit/colors/caret_background_color = Color(0, 0, 0, 1)
+TextEdit/colors/caret_color = Color(0.875, 0.875, 0.875, 1)
+TextEdit/colors/current_line_color = Color(0.25, 0.25, 0.26, 0.8)
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_outline_color = Color(1, 1, 1, 1)
+TextEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+TextEdit/colors/font_readonly_color = Color(0.875, 0.875, 0.875, 0.5)
+TextEdit/colors/font_selected_color = Color(0, 0, 0, 0)
+TextEdit/colors/search_result_border_color = Color(0.3, 0.3, 0.3, 0.4)
+TextEdit/colors/search_result_color = Color(0.3, 0.3, 0.3, 1)
+TextEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+TextEdit/colors/word_highlighted_color = Color(0.5, 0.5, 0.5, 0.25)
+TextEdit/constants/caret_width = 1
+TextEdit/constants/line_spacing = 4
+TextEdit/constants/outline_size = 0
+TextEdit/font_sizes/font_size = 16
+TextEdit/fonts/font = ExtResource("1_73hvi")
+TextEdit/icons/space = SubResource("ImageTexture_jeyus")
+TextEdit/icons/tab = SubResource("ImageTexture_xhyxa")
+TextEdit/styles/focus = ExtResource("2_oiecc")
+TextEdit/styles/normal = ExtResource("2_oiecc")
+TextEdit/styles/read_only = ExtResource("2_oiecc")
+TooltipLabel/fonts/font = ExtResource("1_73hvi")
+TooltipPanel/styles/panel = null
+Tree/fonts/font = ExtResource("1_73hvi")
+Tree/fonts/title_button_font = ExtResource("1_73hvi")
+Tree/styles/button_pressed = null
+Tree/styles/cursor = null
+Tree/styles/cursor_unfocused = null
+Tree/styles/custom_button = null
+Tree/styles/custom_button_hover = null
+Tree/styles/custom_button_pressed = null
+Tree/styles/focus = null
+Tree/styles/panel = null
+Tree/styles/selected = null
+Tree/styles/selected_focus = null
+Tree/styles/title_button_hover = null
+Tree/styles/title_button_normal = null
+Tree/styles/title_button_pressed = null
+VScrollBar/styles/grabber = null
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null
+VSeparator/styles/separator = null
+VSlider/styles/grabber_area = null
+VSlider/styles/grabber_area_highlight = null
+VSlider/styles/slider = null
+Window/fonts/title_font = ExtResource("1_73hvi")
+Window/styles/embedded_border = ExtResource("2_oiecc")
