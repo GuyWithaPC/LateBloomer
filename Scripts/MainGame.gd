@@ -237,7 +237,7 @@ var field: Dictionary = {
 }
 
 const TIME_PER_TICK = 5.0
-const TIME_PER_DAY = 60.0
+const TIME_PER_DAY = 20.0
 const BASE_GROWTH_CHANCE = 0.1
 var time_since_tick = 0.0
 var day_time = 0.0
@@ -306,6 +306,10 @@ func _process(delta):
 			if day == 4:
 				gui.get_node("DayLabel").visible = false
 				$Music.stop()
+				get_node("/root/GlobalVariables").score = player.money
+				var end_screen = load("res://Scenes/EndScreen.tscn").instantiate()
+				get_parent().add_child(end_screen)
+				self.queue_free()
 		if (gui.get_node("DayFade").modulate.a > 0.99):
 			day_time = 0.0
 			if day == 3:

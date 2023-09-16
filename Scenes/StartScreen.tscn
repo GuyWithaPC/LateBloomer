@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwpej4fkgq05b"]
+
+[ext_resource type="Script" path="res://Scripts/StartScreen.gd" id="1_8ywpo"]
+[ext_resource type="Texture2D" uid="uid://svx2kv8tmsrg" path="res://Sprites/Fertilizers/title_background.png" id="1_cra22"]
+[ext_resource type="Theme" uid="uid://dwpyxmtswskgd" path="res://Styles/main_theme.tres" id="2_igqhk"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_8ywpo")
+
+[node name="TitleBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(2.4, 1.8)
+texture = ExtResource("1_cra22")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_igqhk")
+
+[node name="StartButton" type="Button" parent="GUI"]
+offset_left = 408.0
+offset_top = 272.0
+offset_right = 476.0
+offset_bottom = 304.0
+scale = Vector2(5, 5)
+text = "Start"
+
+[connection signal="pressed" from="GUI/StartButton" to="." method="_on_start_button_pressed"]
