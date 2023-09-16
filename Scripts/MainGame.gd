@@ -372,6 +372,8 @@ func plant(area_name: String, type: PlantType) -> bool:
 			return false
 		if field[area_name]["type"] == PlantType.None:
 			return false
+		if field[area_name]["stage"] == GrowthStage.Dead:
+			return false
 		field[area_name]["fertilizer"] |= fertilizers[type]
 		var goofed: bool = fertilizer_stats[fertilizers[type]]["plant_func"].call(fertilizer_stats[fertilizers[type]], field[area_name], field, player)
 		if goofed:
