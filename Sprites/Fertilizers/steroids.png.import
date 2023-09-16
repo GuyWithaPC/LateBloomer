@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y1fmrl7r0v1u"
-path="res://.godot/imported/brawndo.png-a0a660725b203b0ece6bd9f2b06f4b9f.ctex"
+uid="uid://crcdr3am676tk"
+path="res://.godot/imported/steroids.png-00e74ea3f76924ee53ab3a7a4afcd6ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/brawndo.png"
-dest_files=["res://.godot/imported/brawndo.png-a0a660725b203b0ece6bd9f2b06f4b9f.ctex"]
+source_file="res://Sprites/Fertilizers/steroids.png"
+dest_files=["res://.godot/imported/steroids.png-00e74ea3f76924ee53ab3a7a4afcd6ab.ctex"]
 
 [params]
 

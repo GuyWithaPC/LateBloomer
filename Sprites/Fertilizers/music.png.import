@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://smqjrrm3ra7d"
-path="res://.godot/imported/gasoline.png-d525402c2e397848a213549a728ada95.ctex"
+uid="uid://cqvrxlhmqhds8"
+path="res://.godot/imported/music.png-da8501a82cbb859b7a8245d8a66efb09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/gasoline.png"
-dest_files=["res://.godot/imported/gasoline.png-d525402c2e397848a213549a728ada95.ctex"]
+source_file="res://Sprites/Fertilizers/music.png"
+dest_files=["res://.godot/imported/music.png-da8501a82cbb859b7a8245d8a66efb09.ctex"]
 
 [params]
 

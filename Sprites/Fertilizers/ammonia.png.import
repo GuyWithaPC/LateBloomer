@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crcdr3am676tk"
-path="res://.godot/imported/steroids.png-ab934277c252479d423e5a481c9f4a78.ctex"
+uid="uid://dkxdaxncyihpm"
+path="res://.godot/imported/ammonia.png-0b0ddbdfda1612a72d9672badabba025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/steroids.png"
-dest_files=["res://.godot/imported/steroids.png-ab934277c252479d423e5a481c9f4a78.ctex"]
+source_file="res://Sprites/Fertilizers/ammonia.png"
+dest_files=["res://.godot/imported/ammonia.png-0b0ddbdfda1612a72d9672badabba025.ctex"]
 
 [params]
 

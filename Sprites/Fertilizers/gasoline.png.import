@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpxhnk0fp1gco"
-path="res://.godot/imported/plutonium.png-426c9b0967e01c281591c1b2717ab4cd.ctex"
+uid="uid://smqjrrm3ra7d"
+path="res://.godot/imported/gasoline.png-e9574f8d647ac33f61579a4c7db91203.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/plutonium.png"
-dest_files=["res://.godot/imported/plutonium.png-426c9b0967e01c281591c1b2717ab4cd.ctex"]
+source_file="res://Sprites/Fertilizers/gasoline.png"
+dest_files=["res://.godot/imported/gasoline.png-e9574f8d647ac33f61579a4c7db91203.ctex"]
 
 [params]
 

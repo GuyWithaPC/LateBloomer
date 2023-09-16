@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqvrxlhmqhds8"
-path="res://.godot/imported/music.png-5608b0ad37325fd950f8e27b1b46a4ad.ctex"
+uid="uid://svx2kv8tmsrg"
+path="res://.godot/imported/title_background.png-6fd8333f69af7017d4b9398c25131155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/music.png"
-dest_files=["res://.godot/imported/music.png-5608b0ad37325fd950f8e27b1b46a4ad.ctex"]
+source_file="res://Sprites/Fertilizers/title_background.png"
+dest_files=["res://.godot/imported/title_background.png-6fd8333f69af7017d4b9398c25131155.ctex"]
 
 [params]
 

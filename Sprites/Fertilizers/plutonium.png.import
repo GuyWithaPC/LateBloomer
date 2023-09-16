@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0bkdo80huj4l"
-path="res://.godot/imported/ipad.png-c16ab8af046bdbf3ccde322227df9311.ctex"
+uid="uid://bpxhnk0fp1gco"
+path="res://.godot/imported/plutonium.png-2120de905f3ff7bec775faf12ed0a39e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/ipad.png"
-dest_files=["res://.godot/imported/ipad.png-c16ab8af046bdbf3ccde322227df9311.ctex"]
+source_file="res://Sprites/Fertilizers/plutonium.png"
+dest_files=["res://.godot/imported/plutonium.png-2120de905f3ff7bec775faf12ed0a39e.ctex"]
 
 [params]
 

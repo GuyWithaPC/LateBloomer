@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkxdaxncyihpm"
-path="res://.godot/imported/ammonia.png-be517d73a0dbed49cce796d5a558d147.ctex"
+uid="uid://0bkdo80huj4l"
+path="res://.godot/imported/ipad.png-75bbabe8f999f635e62c0f51df88afff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/ammonia.png"
-dest_files=["res://.godot/imported/ammonia.png-be517d73a0dbed49cce796d5a558d147.ctex"]
+source_file="res://Sprites/Fertilizers/ipad.png"
+dest_files=["res://.godot/imported/ipad.png-75bbabe8f999f635e62c0f51df88afff.ctex"]
 
 [params]
 

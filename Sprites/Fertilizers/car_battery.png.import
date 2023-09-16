@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dslooyr0xqydd"
-path="res://.godot/imported/car_battery.png-f3cb51f37f745ef9cea2d269e365b6fe.ctex"
+path="res://.godot/imported/car_battery.png-4167d9725314148437b89bf8270eba0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/car_battery.png"
-dest_files=["res://.godot/imported/car_battery.png-f3cb51f37f745ef9cea2d269e365b6fe.ctex"]
+source_file="res://Sprites/Fertilizers/car_battery.png"
+dest_files=["res://.godot/imported/car_battery.png-4167d9725314148437b89bf8270eba0e.ctex"]
 
 [params]
 
