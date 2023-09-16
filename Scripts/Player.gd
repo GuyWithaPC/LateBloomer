@@ -130,3 +130,7 @@ func _on_planter_area_entered(area):
 		return
 	
 	money += root.harvest(area.name)
+
+
+func _on_trash_pressed():
+	item_count = 0

@@ -237,7 +237,7 @@ var field: Dictionary = {
 }
 
 const TIME_PER_TICK = 5.0
-const TIME_PER_DAY = 20.0
+const TIME_PER_DAY = 60.0
 const BASE_GROWTH_CHANCE = 0.1
 var time_since_tick = 0.0
 var day_time = 0.0
@@ -381,8 +381,14 @@ func plant(area_name: String, type: PlantType) -> bool:
 		field[area_name]["fertilizer"] |= fertilizers[type]
 		var goofed: bool = fertilizer_stats[fertilizers[type]]["plant_func"].call(fertilizer_stats[fertilizers[type]], field[area_name], field, player)
 		if goofed:
-			print_debug("fertilizer: %s\n----\nGet goofed on!" % fertilizer_tooltips[fertilizers[type]])
+			var particles = plant_particles.instantiate()
+			particles.setup(Color(100,0,150))
+			$Crops/Positions.get_node(area_name).add_child(particles)
 			$Crops/Sprites.get_node(area_name).modulate = Color(randf_range(0.5,1.0), randf_range(0.5,1.0), randf_range(0.5,1.0))
+		else:
+			var particles = plant_particles.instantiate()
+			particles.setup(Color(100,50,150))
+			$Crops/Positions.get_node(area_name).add_child(particles)
 		return true
 
 func harvest(area_name: String) -> int:

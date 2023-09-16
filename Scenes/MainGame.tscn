@@ -100,7 +100,6 @@ offset_bottom = 250.0
 color = Color(0, 0, 0, 1)
 
 [node name="ShopScreen" type="Panel" parent="Background/Player/GUI"]
-visible = false
 layout_mode = 0
 offset_left = -119.0
 offset_top = -106.0
@@ -312,6 +311,15 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Day 1"
+
+[node name="Trash" type="Button" parent="Background/Player/GUI"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = 47.0
+offset_right = -122.0
+offset_bottom = 79.0
+tooltip_text = "Drop what you've got (no refunds)"
+text = "Trash"
 
 [node name="Label" type="Label" parent="Background"]
 z_index = 2
@@ -602,3 +610,5 @@ shape = SubResource("RectangleShape2D_reoiw")
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_o5wdr")
 autoplay = true
+
+[connection signal="pressed" from="Background/Player/GUI/Trash" to="Background/Player" method="_on_trash_pressed"]
