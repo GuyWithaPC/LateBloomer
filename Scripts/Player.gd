@@ -56,7 +56,7 @@ func _physics_process(delta):
 		direction.x += 1
 	if Input.is_action_just_pressed("ui_cancel"):
 		item_count = 4
-		item_type = Item.Brawndo
+		item_type = Item.IPad
 	
 	direction = direction.normalized()
 	direction.y *= UPDOWNSPEED

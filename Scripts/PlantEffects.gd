@@ -31,6 +31,7 @@ static func kill_plant(plant: Dictionary):
 	plant["stage"] = GrowthStage.Dead
 	plant["growth_mult"] = 0.0
 	plant["fertilizer"] = 0
+	plant["goofed"] = true
 
 static func get_neighbors(slot: int) -> Array:
 	var neighbors = []
@@ -94,6 +95,6 @@ static func update_ipad(fertilizer, plant, field, player) -> bool:
 	if (randf() < fertilizer["benefit_chance"]):
 		return false
 	if plant["stage"] == GrowthStage.Grown:
-		plant["stage"] = GrowthStage.Dead
+		kill_plant(plant)
 		return true
 	return false

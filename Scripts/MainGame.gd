@@ -175,7 +175,9 @@ func empty_plant(slot: int) -> Dictionary:
 		"slot": slot,
 		"stage": GrowthStage.None,
 		"growth_mult": 1.0,
-		"fertilizer": 0
+		"fertilizer": 0,
+		"scale_mult": 1.0,
+		"goofed": false
 	}
 	return plant_dict
 
@@ -196,7 +198,7 @@ var field: Dictionary = {
 
 const TIME_PER_TICK = 5.0
 const TIME_PER_DAY = 60.0
-const BASE_GROWTH_CHANCE = 0.1
+const BASE_GROWTH_CHANCE = 0.5
 var time_since_tick = 0.0
 var day_time = 0.0
 
@@ -210,12 +212,16 @@ var player = gui.get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# make sure crop sprites are working
+	# update crop sprites
 	var sprites = get_tree().get_nodes_in_group("CropSprites")
 	for sprite in sprites:
 		var plant: Dictionary = field[sprite.name]
 		sprite.visible = (plant["type"] != PlantType.None)
 		sprite.frame = plant["type"]*4 + plant["stage"]
+		sprite.scale = Vector2(1,1) * field[sprite.name]["scale_mult"]
+		if (isUsing(field[sprite.name], FertilizerType.Steroids)):
+			sprite.scale *= 1.25
+		field[sprite.name]["scale_mult"] = lerp(field[sprite.name]["scale_mult"], 1.0, delta*10)
 	
 	# run clock on GUI
 	day_time += delta
@@ -249,8 +255,12 @@ func _process(delta):
 					growth_chance *= fertilizer_stats[type]["growth_rate"]
 				if (randf() < growth_chance):
 					field[k]["stage"] += 1
+					field[k]["scale_mult"] = 1.25
 			else:
-				field[k] = empty_plant(int(k))
+				if field[k]["goofed"]:
+					field[k]["goofed"] = false
+				else:
+					field[k] = empty_plant(int(k))
 
 ## Plant a plant / use fertilizer on a specific part of the field
 ## Return a boolean depending on whether it was successful

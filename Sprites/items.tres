@@ -1,6 +1,14 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://kbwsdbkyj55o"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://kbwsdbkyj55o"]
 
 [ext_resource type="Texture2D" uid="uid://gt68tvu5ypsu" path="res://Sprites/Tilemaps/farm_tilemap.png" id="1_1nupc"]
+[ext_resource type="Texture2D" uid="uid://y1fmrl7r0v1u" path="res://Sprites/Fertilizers/brawndo.png" id="2_wi0e2"]
+[ext_resource type="Texture2D" uid="uid://bpxhnk0fp1gco" path="res://Sprites/Fertilizers/plutonium.png" id="3_d18mo"]
+[ext_resource type="Texture2D" uid="uid://dkxdaxncyihpm" path="res://Sprites/Fertilizers/ammonia.png" id="4_5clrn"]
+[ext_resource type="Texture2D" uid="uid://smqjrrm3ra7d" path="res://Sprites/Fertilizers/gasoline.png" id="5_55hrb"]
+[ext_resource type="Texture2D" uid="uid://crcdr3am676tk" path="res://Sprites/Fertilizers/steroids.png" id="6_sjwll"]
+[ext_resource type="Texture2D" uid="uid://0bkdo80huj4l" path="res://Sprites/Fertilizers/ipad.png" id="7_kbdqk"]
+[ext_resource type="Texture2D" uid="uid://dslooyr0xqydd" path="res://Sprites/Fertilizers/car_battery.png" id="8_ly0ji"]
+[ext_resource type="Texture2D" uid="uid://cqvrxlhmqhds8" path="res://Sprites/Fertilizers/music.png" id="9_lamo7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs5a5"]
 atlas = ExtResource("1_1nupc")
@@ -18,10 +26,6 @@ region = Rect2(180, 54, 18, 18)
 atlas = ExtResource("1_1nupc")
 region = Rect2(198, 54, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_55mld"]
-atlas = ExtResource("1_1nupc")
-region = Rect2(180, 18, 18, 18)
-
 [resource]
 animations = [{
 "frames": [{
@@ -38,7 +42,28 @@ animations = [{
 "texture": SubResource("AtlasTexture_u3uno")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_55mld")
+"texture": ExtResource("2_wi0e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d18mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5clrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_55hrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sjwll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kbdqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ly0ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lamo7")
 }],
 "loop": true,
 "name": &"default",
