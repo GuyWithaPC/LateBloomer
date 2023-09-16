@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch6t1sa1oip43"]
+[gd_scene load_steps=9 format=3 uid="uid://ch6t1sa1oip43"]
 
 [ext_resource type="TileSet" uid="uid://bgwjhngndvqgc" path="res://Sprites/Tilemaps/farm_tileset.tres" id="1_fbn53"]
+[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_k8uuu"]
 [ext_resource type="PackedScene" uid="uid://v6nb4c8yhyad" path="res://Prefabs/Player.tscn" id="2_0ifmt"]
 [ext_resource type="SpriteFrames" uid="uid://dwvf1gmmkw0gb" path="res://Sprites/GUI/Timer/timer.tres" id="3_ehn5a"]
 [ext_resource type="Theme" uid="uid://dwpyxmtswskgd" path="res://Styles/main_theme.tres" id="3_xqjpg"]
+[ext_resource type="SpriteFrames" uid="uid://tpll24c1w2w6" path="res://Sprites/crops.tres" id="5_l2dei"]
+[ext_resource type="SpriteFrames" uid="uid://kbwsdbkyj55o" path="res://Sprites/items.tres" id="5_ojflj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyqkt"]
+size = Vector2(14, 14)
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_k8uuu")
 
 [node name="Background" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -31,6 +38,7 @@ layer_2/tile_data = PackedInt32Array(-196610, 458756, 2, -196609, 524292, 2, -26
 [node name="Player" parent="Background" instance=ExtResource("2_0ifmt")]
 z_index = 1
 y_sort_enabled = true
+position = Vector2(-81, -45)
 
 [node name="GUI" type="Control" parent="Background/Player"]
 z_index = 100
@@ -47,50 +55,172 @@ sprite_frames = ExtResource("3_ehn5a")
 
 [node name="Money" type="Label" parent="Background/Player/GUI"]
 layout_mode = 0
-offset_left = -34.0
-offset_top = -107.0
-offset_right = 36.0
-offset_bottom = -70.0
+offset_left = -190.0
+offset_top = -30.0
+offset_right = -120.0
+offset_bottom = 7.0
 text = "$40"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ItemCount" type="Label" parent="Background/Player/GUI"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = 8.0
+offset_right = -143.0
+offset_bottom = 45.0
+text = "4     "
+
+[node name="ItemType" type="AnimatedSprite2D" parent="Background/Player/GUI/ItemCount"]
+position = Vector2(30, 18)
+sprite_frames = ExtResource("5_ojflj")
 
 [node name="Crops" type="Node2D" parent="."]
 
 [node name="Positions" type="Node2D" parent="Crops"]
 
-[node name="1" type="Marker2D" parent="Crops/Positions"]
+[node name="1" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(-9, 9)
 
-[node name="2" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/1"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="2" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(9, 9)
 
-[node name="3" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/2"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="3" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(27, 9)
 
-[node name="4" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/3"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="4" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(45, 9)
 
-[node name="5" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/4"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="5" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(-9, 27)
 
-[node name="6" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/5"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="6" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(9, 27)
 
-[node name="7" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/6"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="7" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(27, 27)
 
-[node name="8" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/7"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="8" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(45, 27)
 
-[node name="9" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/8"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="9" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(-9, 45)
 
-[node name="10" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/9"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="10" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(9, 45)
 
-[node name="11" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/10"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="11" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(27, 45)
 
-[node name="12" type="Marker2D" parent="Crops/Positions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/11"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="12" type="Area2D" parent="Crops/Positions" groups=["CropPositions"]]
 position = Vector2(45, 45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crops/Positions/12"]
+shape = SubResource("RectangleShape2D_yyqkt")
+
+[node name="Sprites" type="Node2D" parent="Crops"]
+
+[node name="1" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(-9, 9)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="2" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(9, 9)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="3" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(27, 9)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="4" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(45, 9)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="5" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(-9, 27)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="6" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(9, 27)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="7" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(27, 27)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="8" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(45, 27)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="9" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(-9, 45)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="10" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(9, 45)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="11" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(27, 45)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
+
+[node name="12" type="AnimatedSprite2D" parent="Crops/Sprites" groups=["CropSprites"]]
+visible = false
+position = Vector2(45, 45)
+sprite_frames = ExtResource("5_l2dei")
+offset = Vector2(0, -6)
