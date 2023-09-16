@@ -97,16 +97,20 @@ func getFertilizers(plant: Dictionary) -> Array:
 
 var plant_stats = {
 	PlantType.Carrot: {
-		"growth_rate": 1
+		"growth_rate": 3,
+		"base_value": 1
 	},
 	PlantType.Tomato: {
-		"growth_rate": 1
+		"growth_rate": 2,
+		"base_value": 2
 	},
 	PlantType.Wheat: {
-		"growth_rate": 1
+		"growth_rate": 3,
+		"base_value": 1
 	},
 	PlantType.Corn: {
-		"growth_rate": 1
+		"growth_rate": 1,
+		"base_value": 4
 	}
 }
 
@@ -210,6 +214,9 @@ var gui = get_tree().get_nodes_in_group("GUI")[0]
 @onready
 var player = gui.get_parent()
 
+@onready
+var plant_particles = preload("res://Prefabs/PlantParticles.tscn")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# update crop sprites
@@ -271,6 +278,9 @@ func plant(area_name: String, type: PlantType) -> bool:
 			return false
 		field[area_name]["type"] = type
 		field[area_name]["stage"] = GrowthStage.Seedling
+		var particles = plant_particles.instantiate()
+		particles.setup(Color(0,150,0))
+		$Crops/Positions.get_node(area_name).add_child(particles)
 		return true
 	else:
 		# apply a fertilizer
@@ -283,6 +293,18 @@ func plant(area_name: String, type: PlantType) -> bool:
 		if goofed:
 			print_debug("fertilizer: %s\n----\nGet goofed on!" % fertilizer_tooltips[fertilizers[type]])
 		return true
+
+func harvest(area_name: String) -> int:
+	if field[area_name]["type"] == PlantType.None or field[area_name]["stage"] != GrowthStage.Grown:
+		return 0
+	var cash = plant_stats[field[area_name]["type"]]["base_value"]
+	if isUsing(field[area_name], FertilizerType.Steroids):
+		cash = round(cash * fertilizer_stats[FertilizerType.Steroids]["plant_yield"])
+	field[area_name] = empty_plant(field[area_name]["slot"])
+	var particles = plant_particles.instantiate()
+	particles.setup(Color(150,150,0))
+	$Crops/Positions.get_node(area_name).add_child(particles)
+	return cash
 
 ## Get the tooltip of the fertilizer type
 ## enumerated from 4-11, since the player stores all inventory in one big enum

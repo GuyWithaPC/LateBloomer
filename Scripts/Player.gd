@@ -55,8 +55,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		direction.x += 1
 	if Input.is_action_just_pressed("ui_cancel"):
-		item_count = 4
-		item_type = Item.IPad
+		item_count = 2
+		item_type = Item.Steroids
 	
 	direction = direction.normalized()
 	direction.y *= UPDOWNSPEED
@@ -92,3 +92,5 @@ func _on_planter_area_entered(area):
 	
 	if item_count > 0:
 		item_count -= 1 if root.plant(area.name, item_type) else 0
+	
+	money += root.harvest(area.name)
